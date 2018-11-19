@@ -53,6 +53,7 @@ def cutMemo(p, n, memo):
             q = max(q, p[i]+cutMemo(p,n-i,memo))
 
     memo[n] = q
+    print(memo)
     return q
 
 def cutMemo_CutPrice(p, n,c, memo):
@@ -65,13 +66,13 @@ def cutMemo_CutPrice(p, n,c, memo):
     else:
         q = -100
         for i in range(1,n+1):
-            q = max(q, p[i]+cutMemo(p,n-i,memo))
+            q = max(q, p[i]+cutMemo(p,n-i,memo)-c)
 
-    memo[n] = q-c
-    return q-c
+    memo[n] = q
+    return q
 
 
-n = 10
+n = 5
 p = [1]
 for i in range(1,n):
     p.append(0)

@@ -51,6 +51,14 @@ def straight_check_prime(n):
     return True
 
 if __name__ == '__main__':
+    inp = 0
+    while True:
+        inp = int(input('Number: '))
+        if inp == -1: break
+        print('Number is prime' if if_prime(inp, 10) else 'Number is NOT prime')
+
+    exit()
+
     numbers = 0
 
     primes  = 0
